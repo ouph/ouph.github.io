@@ -4,14 +4,14 @@ const API_KEY = "ce71949df704a212086eaf40e519fece";
 const COORDS = 'coords';
 
 function getWeather(lat, lon) {
-	fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+	fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
 		.then(response => {
 			return response.json();
 		})
 		.then(json => {
 			const temp = json.main.temp;
 			const place = json.name;
-			weather.innerText = `${temp} @ ${place}`;
+			weather.innerText = `${temp}º @ ${place}`;
 		});
 }
 
